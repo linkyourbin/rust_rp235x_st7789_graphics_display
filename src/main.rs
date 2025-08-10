@@ -542,6 +542,21 @@ async fn main(_spawner: Spawner) {
     let raw_image_7 = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_6/avatar.raw"), 240);
     let im7 = Image::new(&raw_image_7, Point::new(0, 0));
 
+    let raw_image_8 = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_6/chii.raw"), 240);
+    let im8 = Image::new(&raw_image_8, Point::new(0, 0));
+
+    let raw_image_9 = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_6/hachi.raw"), 240);
+    let im9 = Image::new(&raw_image_9, Point::new(0, 0));
+
+    let raw_image_10 = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_6/usagi.raw"), 240);
+    let im10 = Image::new(&raw_image_10, Point::new(0, 0));
+
+    let raw_image_11 = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_6/xiaohei.raw"), 240);
+    let im11 = Image::new(&raw_image_11, Point::new(0, 0));
+
+    let raw_image_12 = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_6/xiaohei_cute.raw"), 240);
+    let im12 = Image::new(&raw_image_12, Point::new(0, 0));
+
     display.clear(Rgb565::BLACK).unwrap();
     let delay_interval = 500; // 500 ms delay between tests
     loop {
@@ -565,6 +580,25 @@ async fn main(_spawner: Spawner) {
 
     im6.draw(&mut display).unwrap();
     Timer::after_millis(delay_interval).await;
+
+    im7.draw(&mut display).unwrap();
+    Timer::after_millis(delay_interval).await;
+    
+    im8.draw(&mut display).unwrap();
+    Timer::after_millis(delay_interval).await;
+
+    im9.draw(&mut display).unwrap();
+    Timer::after_millis(delay_interval).await;
+
+    im10.draw(&mut display).unwrap();
+    Timer::after_millis(delay_interval).await;
+
+    im11.draw(&mut display).unwrap();
+    Timer::after_millis(delay_interval).await;
+
+    im12.draw(&mut display).unwrap();
+    Timer::after_millis(delay_interval).await;
+
         // // Test 1: Color accuracy verification
         // test_color_accuracy(&mut display);
         // // Timer::after(Duration::from_secs(3)).await; // 3-second pause between tests
