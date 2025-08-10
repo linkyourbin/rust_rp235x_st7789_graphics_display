@@ -1,0 +1,39 @@
+# Polarity Correction Test Results
+
+Your display likely uses one of these configurations:
+- MODE 0: Standard RGB565 (normal)
+- MODE 1: Standard BGR565 (normal)
+- MODE 2: Compact RGB565 (normal)
+- MODE 3: Compact BGR565 (normal)
+- MODE 4: Standard RGB565 (inverted)
+- MODE 5: Standard BGR565 (inverted)
+- MODE 6: Compact RGB565 (inverted)
+- MODE 7: Compact BGR565 (inverted)
+
+## How to identify correct mode:
+1. Flash each MODE_* directory to your device
+2. Look for the test pattern (if generated):
+   - Left: RED | GREEN | BLUE vertical stripes
+   - Right: Black ¡ú White gradient
+   - CORRECT MODE:
+        * Left strip: Pure Red, Green, Blue
+        * Right gradient: Smooth black to white
+        * NO black/white inversion
+
+## Rust usage for correct mode:
+```rust
+// For normal polarity (MODE 0-3):
+let img = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_X/your_image.raw"), 240);
+
+// For inverted polarity (MODE 4-7):
+// Option 1: Use inverted RAW files (recommended)
+let img = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_X/your_image.raw"), 240);
+
+// Option 2: Keep normal RAW but invert display (advanced)
+//   display.command(st7789::Command::INVON, &[])?; // Enable inversion
+```
+
+## Next steps:
+1. Identify correct mode from test results
+2. Delete other mode_* directories
+3. Rename correct directory to 'assets'
