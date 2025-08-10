@@ -2,8 +2,9 @@
 ![](demo_pics/rp_logo.jpg)
 ![](demo_pics/ferris_1.jpg)
 ![](demo_pics/ferris_2.jpg)
-![](demo_pics/ferris_3.jpg)
-![](demo_pics/ferris_4.jpg)
+![](demo_pics/avatar.jpg)
+![](demo_pics/xiaohei.jpg)
+![](demo_pics/chii.jpg)
 # 硬件接线
 > 忽略touch_cs即可，若是手里屏幕不带触摸功能，屏幕尺寸为240*240
 >
