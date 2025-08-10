@@ -538,6 +538,10 @@ async fn main(_spawner: Spawner) {
     
     let raw_image_6 = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_6/6.raw"), 240);
     let im6 = Image::new(&raw_image_6, Point::new(0, 0));
+
+    let raw_image_7 = ImageRawLE::<Rgb565>::new(include_bytes!("../assets/mode_6/avatar.raw"), 240);
+    let im7 = Image::new(&raw_image_7, Point::new(0, 0));
+
     display.clear(Rgb565::BLACK).unwrap();
     let delay_interval = 500; // 500 ms delay between tests
     loop {
